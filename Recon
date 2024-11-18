@@ -17,8 +17,8 @@ Step 6: Identify specific WAFs
 cat live.txt | grep -v -I -E 'cloudfront|cloudflare|imperva' | awk '{print $1}'
 
 Step 7: Fetch Urls from sites
-katana -u subs.txt -d 5  waybackarchive,commoncrawl,alienvault 
--kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg >> allurls.txt
+katana -u subs.txt -d 5  waybackarchive,commoncrawl,alienvault -kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg >> allurls.txt
+#katana -u subdomains_alive.txt -d 5 -ps -pss waybackarchive,commoncrawl,alienvault -kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg -o allurls.txt
 
 Step 8: Identify secrets files
 cat allurls.txt | grep -E "\.txt|\.log|\.cache|\.secret|\.db|\.backup|\.yml|\.json|\.gz|\.rar|\.zip|\.config"
@@ -28,3 +28,4 @@ cat allurls.txt | grep -E "\.js$" >> js.txt
 
 Step 10: Directory Brute-Forcing
 dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 -o /dirs.txt
+#dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 --random-agent
