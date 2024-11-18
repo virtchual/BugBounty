@@ -72,8 +72,22 @@ $sudo cp ~/go/bin/nuclei /usr/bin
 ____________________________________________________________________________________________________________________________________
 DirSearch Install:
 
+$git clone https://github.com/maurosoria/dirsearch.git --depth 1
 
+sudo apt install python3
+sudo apt-get install python3-pip
+sudo apt upgrade python3 -y
+sudo apt upgrade python3-pip -y
+sudo apt-get install libpq-dev
 
+pip3 install psycopg2-binary
+pip3 install psycopg2
+pip3 install psycopg
+pip3 install mysql-connector-python-rf
+pip3 install defusedcsv
+pip3 install httpx_ntlm
+pip3 install requests_toolbelt
+python3 dirsearch/dirsearch.py -u https://bugbase.ai
 
 
 
@@ -107,5 +121,5 @@ Step 9: Find Javascritpt files
 cat allurls.txt | grep -E "\.js$" >> js.txt
 
 Step 10: Directory Brute-Forcing
-dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 -o /dirs.txt
+python3 dirsearch/dirsearch.py  -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 -o /dirs2.txt
 #dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 --random-agent
