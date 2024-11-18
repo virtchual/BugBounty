@@ -12,6 +12,18 @@ SubFinder Install:
 $go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 $sudo cp ~/go/bin/subfinder /usr/bin
 $sudo subfinder -up
+$subfinder
+
+               __    _____           __         
+   _______  __/ /_  / __(_)___  ____/ /__  _____
+  / ___/ / / / __ \/ /_/ / __ \/ __  / _ \/ ___/
+ (__  ) /_/ / /_/ / __/ / / / / /_/ /  __/ /    
+/____/\__,_/_.___/_/ /_/_/ /_/\__,_/\___/_/
+
+                projectdiscovery.io
+
+[INF] Current subfinder version v2.6.7 (latest)
+
 
 ____________________________________________________________________________________________________________________________________
 HTTPX Install:
@@ -61,14 +73,43 @@ $httpx -dashboard
 
 ____________________________________________________________________________________________________________________________________
 Katana Install:
+
 $go install github.com/projectdiscovery/katana/cmd/katana@latest
 $sudo cp ~/go/bin/Katana /usr/bin
+$katana
+   __        __                
+  / /_____ _/ /____ ____  ___ _
+ /  '_/ _  / __/ _  / _ \/ _  /
+/_/\_\\_,_/\__/\_,_/_//_/\_,_/                                                   
+
+                projectdiscovery.io
+
+[INF] Current katana version v1.1.1 (latest)
+
 ____________________________________________________________________________________________________________________________________
 Nuclei Install:
+
 $go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 $sudo cp ~/go/bin/nuclei /usr/bin
+$nuclei
 
+                     __     _
+   ____  __  _______/ /__  (_)
+  / __ \/ / / / ___/ / _ \/ /
+ / / / / /_/ / /__/ /  __/ /
+/_/ /_/\__,_/\___/_/\___/_/   v3.2.9
 
+                projectdiscovery.io
+___________________________________________________________________________________________________________________________________
+
+OPTIONAL:You can install all the above packages together with other extras by doing the following:
+
+PDTM install:
+$go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
+$sudo cp ~/go/bin/pdtm /usr/bin
+$sudo apt install -y libcap
+$sudo apt install -y massdns
+$pdtm -install-all
 ____________________________________________________________________________________________________________________________________
 DirSearch Install:
 
@@ -87,8 +128,14 @@ pip3 install mysql-connector-python-rf
 pip3 install defusedcsv
 pip3 install httpx_ntlm
 pip3 install requests_toolbelt
-python3 dirsearch/dirsearch.py -u https://bugbase.ai
+dirsearch/dirsearch.py https://target.com
 
+  _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                                                           
+ (_||| _) (/_(_|| (_| )                                                                                                                                                                    
+                                                                                                                                                                                           
+Extensions: php, asp, aspx, jsp, html, htm | HTTP method: GET | Threads: 25 | Wordlist size: 12266
+
+Target: https://target.com
 
 
 ___________________________________________________________________________________________________________________________________
@@ -121,5 +168,6 @@ Step 9: Find Javascritpt files
 cat allurls.txt | grep -E "\.js$" >> js.txt
 
 Step 10: Directory Brute-Forcing
-python3 dirsearch/dirsearch.py  -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 -o /dirs2.txt
+python3 dirsearch/dirsearch.py -u https://target.com -o dirs.txt -e xml,json,sql,db,log,yml,bak,txt,tar.gz,zip -x 301,403,404,500,400,502,503,302,429 
 #dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 --random-agent
+#Do not use sudo for this one.
