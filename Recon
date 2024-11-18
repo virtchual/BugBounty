@@ -6,7 +6,7 @@ $sudo apt upgrade
 $sudo apt install zip curl wget git
 $sudo apt install golang-go
 
-____________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 SubFinder Install:
 
 $go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
@@ -25,7 +25,7 @@ $subfinder
 [INF] Current subfinder version v2.6.7 (latest)
 
 
-____________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 HTTPX Install:
 
 $go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
@@ -71,7 +71,7 @@ $httpx -dashboard
 [*] Enter PDCP API Key (exit to abort): API_KEY
 [INF] Successfully logged in as (@Account_Name)
 
-____________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 Katana Install:
 
 $go install github.com/projectdiscovery/katana/cmd/katana@latest
@@ -86,7 +86,7 @@ $katana
 
 [INF] Current katana version v1.1.1 (latest)
 
-____________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 Nuclei Install:
 
 $go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -100,8 +100,7 @@ $nuclei
 /_/ /_/\__,_/\___/_/\___/_/   v3.2.9
 
                 projectdiscovery.io
-___________________________________________________________________________________________________________________________________
-
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 OPTIONAL:You can install all the above packages together with other extras by doing the following:
 
 PDTM install:
@@ -110,25 +109,26 @@ $sudo cp ~/go/bin/pdtm /usr/bin
 $sudo apt install -y libcap
 $sudo apt install -y massdns
 $pdtm -install-all
-____________________________________________________________________________________________________________________________________
+#pdtm -i package_name(To install specific package)
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 DirSearch Install:
 
 $git clone https://github.com/maurosoria/dirsearch.git --depth 1
 
-sudo apt install python3
-sudo apt-get install python3-pip
-sudo apt upgrade python3 -y
-sudo apt upgrade python3-pip -y
-sudo apt-get install libpq-dev
+$sudo apt install python3
+$sudo apt-get install python3-pip
+$sudo apt upgrade python3 -y
+$sudo apt upgrade python3-pip -y
+$sudo apt-get install libpq-dev
 
-pip3 install psycopg2-binary
-pip3 install psycopg2
-pip3 install psycopg
-pip3 install mysql-connector-python-rf
-pip3 install defusedcsv
-pip3 install httpx_ntlm
-pip3 install requests_toolbelt
-dirsearch/dirsearch.py https://target.com
+$pip3 install psycopg2-binary
+$pip3 install psycopg2
+$pip3 install psycopg
+$pip3 install mysql-connector-python-rf
+$pip3 install defusedcsv
+$pip3 install httpx_ntlm
+$pip3 install requests_toolbelt
+$dirsearch/dirsearch.py https://target.com
 
   _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                                                           
  (_||| _) (/_(_|| (_| )                                                                                                                                                                    
@@ -138,36 +138,36 @@ Extensions: php, asp, aspx, jsp, html, htm | HTTP method: GET | Threads: 25 | Wo
 Target: https://target.com
 
 
-___________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 Step 1 :Subdomain Enumeration
-subfinder -d domain.com --all -recursive >>subs.txt
+$subfinder -d domain.com --all -recursive >>subs.txt
 
 Step 2:Filter Live Hosts
-cat subs.txt |httpx -td -title -sc -ip >>live.txt
+$cat subs.txt |httpx -td -title -sc -ip >>live.txt
 
 Step 3:Run Nuclei for Vulnerabilities 
-nuclei -l live.txt -rl 10 -bs 2 -c 2 -as -silent -s critical,high,medium
+$nuclei -l live.txt -rl 10 -bs 2 -c 2 -as -silent -s critical,high,medium
 
 Step 4: Filter for HTTP 200 Subdomains
-cat subs.txt | grep 200 | awk '{print $1}'
+$cat subs.txt | grep 200 | awk '{print $1}'
 
 Step 5: Identify WAF Subdomains
-cat live.txt | grep 403
+$cat live.txt | grep 403
 
 Step 6: Identify specific WAFs
-cat live.txt | grep -v -I -E 'cloudfront|cloudflare|imperva' | awk '{print $1}'
+$cat live.txt | grep -v -I -E 'cloudfront|cloudflare|imperva' | awk '{print $1}'
 
 Step 7: Fetch Urls from sites
-katana -u subs.txt -d 5  waybackarchive,commoncrawl,alienvault -kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg >> allurls.txt
+$katana -u subs.txt -d 5  waybackarchive,commoncrawl,alienvault -kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg >> allurls.txt
 #katana -u subdomains_alive.txt -d 5 -ps -pss waybackarchive,commoncrawl,alienvault -kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg -o allurls.txt
 
 Step 8: Identify secrets files
-cat allurls.txt | grep -E "\.txt|\.log|\.cache|\.secret|\.db|\.backup|\.yml|\.json|\.gz|\.rar|\.zip|\.config"
+$cat allurls.txt | grep -E "\.txt|\.log|\.cache|\.secret|\.db|\.backup|\.yml|\.json|\.gz|\.rar|\.zip|\.config"
 
 Step 9: Find Javascritpt files
-cat allurls.txt | grep -E "\.js$" >> js.txt
+$cat allurls.txt | grep -E "\.js$" >> js.txt
 
 Step 10: Directory Brute-Forcing
-python3 dirsearch/dirsearch.py -u https://target.com -o dirs.txt -e xml,json,sql,db,log,yml,bak,txt,tar.gz,zip -x 301,403,404,500,400,502,503,302,429 
+$python3 dirsearch/dirsearch.py -u https://target.com -o dirs.txt -e xml,json,sql,db,log,yml,bak,txt,tar.gz,zip -x 301,403,404,500,400,502,503,302,429 
 #dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 --random-agent
 #Do not use sudo for this one.
