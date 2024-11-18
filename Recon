@@ -1,3 +1,76 @@
+
+Requirements:
+
+$sudo apt update
+$sudo apt upgrade
+$sudo apt install zip curl wget git
+$sudo apt install golang-go
+
+____________________________________________________________________________________________________________________________________
+SubFinder Install:
+
+$go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+$sudo cp ~/go/bin/subfinder /usr/bin
+$sudo subfinder -up
+
+____________________________________________________________________________________________________________________________________
+HTTPX Install:
+
+$go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+$sudo cp ~/go/bin/httpx /usr/bin
+$httpx dashboard
+$go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+$httpx
+
+    __    __  __       _  __
+   / /_  / /_/ /_____ | |/ /
+  / __ \/ __/ __/ __ \|   /
+ / / / / /_/ /_/ /_/ /   |
+/_/ /_/\__/\__/ .___/_/|_|
+             /_/
+
+                projectdiscovery.io
+
+[INF] Current httpx version v1.6.9 (latest)
+[WRN] UI Dashboard is disabled, Use -dashboard option to enable
+
+OPTIONAL:
+For GUI Dashboard:
+#Go to "https://cloud.projectdiscovery.io"
+#Create an account(Either through email,google or github)
+#Click on your profile picture at top-right corner
+#Select 'API key' option
+#Copy your API key.
+
+$httpx -dashboard
+
+    __    __  __       _  __
+   / /_  / /_/ /_____ | |/ /
+  / __ \/ __/ __/ __ \|   /
+ / / / / /_/ /_/ /_/ /   |
+/_/ /_/\__/\__/ .___/_/|_|
+             /_/
+
+                projectdiscovery.io
+
+[INF] Current httpx version v1.6.9 (latest)
+[INF] To view results in UI dashboard, visit https://cloud.projectdiscovery.io/assets upon completion.
+[INF] Get your free api key by signing up at https://cloud.projectdiscovery.io
+[*] Enter PDCP API Key (exit to abort): API_KEY
+[INF] Successfully logged in as (@Account_Name)
+
+____________________________________________________________________________________________________________________________________
+Katana Install:
+$go install github.com/projectdiscovery/katana/cmd/katana@latest
+$sudo cp ~/go/bin/Katana /usr/bin
+____________________________________________________________________________________________________________________________________
+Nuclei Install:
+$go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+$sudo cp ~/go/bin/nuclei /usr/bin
+
+
+____________________________________________________________________________________________________________________________________
+
 Step 1 :Subdomain Enumeration
 subfinder -d domain.com --all -recursive >>subs.txt
 
