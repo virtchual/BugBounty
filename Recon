@@ -1,0 +1,30 @@
+Step 1 :Subdomain Enumeration
+subfinder -d domain.com --all -recursive >>subs.txt
+
+Step 2:Filter Live Hosts
+cat subs.txt |httpx -td -title -sc -ip >>live.txt
+
+Step 3:Run Nuclei for Vulnerabilities 
+nuclei -l live.txt -rl 10 -bs 2 -c 2 -as -silent -s critical,high,medium
+
+Step 4: Filter for HTTP 200 Subdomains
+cat subs.txt | grep 200 | awk '{print $1}'
+
+Step 5: Identify WAF Subdomains
+cat live.txt | grep 403
+
+Step 6: Identify specific WAFs
+cat live.txt | grep -v -I -E 'cloudfront|cloudflare|imperva' | awk '{print $1}'
+
+Step 7: Fetch Urls from sites
+katana -u subs.txt -d 5  waybackarchive,commoncrawl,alienvault 
+-kf -jc -fx -ef woff,css,png,svg,jpg,woff2,jpeg,gif,svg >> allurls.txt
+
+Step 8: Identify secrets files
+cat allurls.txt | grep -E "\.txt|\.log|\.cache|\.secret|\.db|\.backup|\.yml|\.json|\.gz|\.rar|\.zip|\.config"
+
+Step 9: Find Javascritpt files
+cat allurls.txt | grep -E "\.js$" >> js.txt
+
+Step 10: Directory Brute-Forcing
+dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 -o /dirs.txt
