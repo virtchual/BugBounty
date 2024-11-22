@@ -171,3 +171,13 @@ Step 10: Directory Brute-Forcing
 $python3 dirsearch/dirsearch.py -u https://target.com -o dirs.txt -e xml,json,sql,db,log,yml,bak,txt,tar.gz,zip -x 301,403,404,500,400,502,503,302,429 
 #dirsearch -u target.com -e xml, json, sql, db, log, yml, bak, txt, tar.gz, zip -x 301,403,404,500,400,502,503,302,429 --random-agent
 #Do not use sudo for this one.
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Internet Archive's Wayback Machine (https://archive.org/web/) :
+
+$git clone https://github.com/tomnomnom/waybackurls
+$cd waybackurls
+$go build
+$./waybackurls domain.com >subdomain.txt
+
