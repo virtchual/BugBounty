@@ -2,7 +2,7 @@
 
 My bug bounty roadmap
 
-Hi
+
 
 ```markdown
 Hi everyone! I'm excited to share my structured bug bounty roadmap, which will be updated as I grow in this field.
@@ -31,9 +31,5 @@ Hi everyone! I'm excited to share my structured bug bounty roadmap, which will b
 ```
 
 
-
-```
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1179762" style='border:none;'></iframe>
-```
 
 \===================Under Construction===================
