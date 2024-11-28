@@ -4,7 +4,7 @@ My bug bounty roadmap
 
 
 
-```markdown
+```markup
 Hi everyone! I'm excited to share my structured bug bounty roadmap, which will be updated as I grow in this field.
 
 ## Phase 1: Foundation
