@@ -1,14 +1,8 @@
-
-
 # BugBounty
 
 My bug bounty roadmap
 
-
-
-{% code overflow="wrap" fullWidth="true" %}
-```
-Hi everyone! I'm excited to share my structured bug bounty roadmap, which will be updated as I grow in this field.
+<pre data-overflow="wrap" data-full-width="true"><code>Hi everyone! I'm excited to share my structured bug bounty roadmap, which will be updated as I grow in this field.
 
 ## Phase 1: Foundation
 
@@ -30,9 +24,12 @@ Hi everyone! I'm excited to share my structured bug bounty roadmap, which will b
 
 - **Choose a Niche**: Focus on mobile app, IoT, or cloud security.
 - **Stay Updated**: Keep learning new trends and vulnerabilities.
+<strong>
+</strong></code></pre>
 
-```
-{% endcode %}
+
+
+## For an in-depth look into the experiences of a fellow bug bounty hunter, you can explore this [Reddit thread](https://www.reddit.com/r/bugbounty/comments/1auocgj/sharing_my_bug_bounty_journey/?rdt=36534). The poster shares their personal journey, detailing the various challenges they've faced, the approaches they've taken to overcome obstacles, and the successes they've achieved in the bug bounty field. The thread offers valuable lessons and insights into the practical aspects of participating in bug bounty programs, the importance of persistence, and the strategies that can lead to successful vulnerability discoveries. Engaging with this content can provide newcomers with motivation and a clearer understanding of what to expect as they navigate their own bug bounty journeys.
 
 
 
