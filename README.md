@@ -4,6 +4,7 @@ My bug bounty roadmap
 
 
 
+{% code overflow="wrap" fullWidth="true" %}
 ```
 Hi everyone! I'm excited to share my structured bug bounty roadmap, which will be updated as I grow in this field.
 
@@ -29,6 +30,7 @@ Hi everyone! I'm excited to share my structured bug bounty roadmap, which will b
 - **Stay Updated**: Keep learning new trends and vulnerabilities.
 
 ```
+{% endcode %}
 
 
 
