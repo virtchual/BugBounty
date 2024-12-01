@@ -115,19 +115,31 @@ DirSearch Install:
 
 $git clone https://github.com/maurosoria/dirsearch.git --depth 1
 
-$sudo apt install python3
-$sudo apt-get install python3-pip
-$sudo apt upgrade python3 -y
-$sudo apt upgrade python3-pip -y
-$sudo apt-get install libpq-dev
+$sudo apt install python3  python3-pip libpq-dev     ###If python3 and python3-pip already installed.Execute this command:$sudo apt upgrade python3 python3-pip -y
 
-$pip3 install psycopg2-binary
-$pip3 install psycopg2
-$pip3 install psycopg
-$pip3 install mysql-connector-python-rf
-$pip3 install defusedcsv
-$pip3 install httpx_ntlm
-$pip3 install requests_toolbelt
+$pip3 install psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt
+#If u get the below error after executing above command then u need to do the following:sudo apt install -y python3-package_naem (where package_name=psycopg2-binary,psycopg2,psycopg,mysql-connector-python-rf,defusedcsv,httpx_ntlm,requests_toolbelt)
+
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Kali-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have pypy3-venv installed.
+    
+    If you wish to install a non-Kali-packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    For more information, refer to the following:
+    * https://www.kali.org/docs/general-use/python3-external-packages/
+    * /usr/share/doc/python3.12/README.venv
+
 $dirsearch/dirsearch.py https://target.com
 
   _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                                                           
