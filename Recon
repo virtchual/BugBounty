@@ -113,10 +113,11 @@ $pdtm -install-all
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
 DirSearch Install:
 
-$git clone https://github.com/maurosoria/dirsearch.git --depth 1
-
 $sudo apt install python3  python3-pip libpq-dev     ###If python3 and python3-pip already installed.Execute this command:$sudo apt upgrade python3 python3-pip -y
-
+$pip3 install dirsearch
+$dirsearch -u url
+                                          OR
+$git clone https://github.com/maurosoria/dirsearch.git --depth 1
 $pip3 install psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt
 #If u get the below error after executing above command then u need to do the following:sudo apt install -y python3-package_naem (where package_name=psycopg2-binary,psycopg2,psycopg,mysql-connector-python-rf,defusedcsv,httpx_ntlm,requests_toolbelt)
 
@@ -148,6 +149,7 @@ $dirsearch/dirsearch.py https://target.com
 Extensions: php, asp, aspx, jsp, html, htm | HTTP method: GET | Threads: 25 | Wordlist size: 12266
 
 Target: https://target.com
+
 
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
