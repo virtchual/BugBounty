@@ -113,13 +113,85 @@ $pdtm -install-all
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
 DirSearch Install:
 
+First check your python version
+$python --version
+
+if python --verson >= 3.11 :
+
+1. Using a Virtual Environment (Recommended)
+   Creating a virtual environment ensures that your packages are isolated from the system's Python environment.
+
+   # Step 1: Install the venv module if not already installed
+   $sudo apt install python3-venv
+
+   # Step 2: Create a virtual environment
+   python3 -m venv myenv
+
+   # Step 3: Activate the virtual environment
+   source myenv/bin/activate
+
+   # Step 4: Install the package within the virtual environment
+   pip install psycopg2-binary psycopg2
+
+   # Step 5: Use Python and pip from the virtual environment
+   python --version
+   pip list
+   ```
+   To exit the virtual environment, run:
+   deactivate
+   ```
+
+---
+2. Using `--break-system-packages` (Not Recommended)
+   If you want to override the restriction and install packages directly into the system Python environment, use the `--break-system-packages` flag.
+
+   ```bash
+   sudo pip3 install psycopg2-binary psycopg2 --break-system-packages
+   ```
+
+   **Warning:** This approach can lead to issues with system-managed Python packages and is discouraged for production systems.
+
+---
+
+3. Using pipx for Application Installation
+   If you need `psycopg2` for a standalone Python application, you can use `pipx` to create a virtual environment automatically.
+
+   ```bash
+   # Step 1: Install pipx if not already installed
+   $sudo apt install pipx
+
+   # Step 2: Use pipx to install the package
+   $pipx install psycopg2-binary
+   ```
+
+---
+
+4. Installing System-Wide via APT
+   To install Python packages system-wide, try apt install python3-xyz, where xyz is the package you are trying to install.
+
+   $sudo apt install python3-xyz
+   ```
+
+---
+
+else:
+
 $sudo apt install python3  python3-pip libpq-dev     ###If python3 and python3-pip already installed.Execute this command:$sudo apt upgrade python3 python3-pip -y
 $pip3 install dirsearch
 $dirsearch -u url
                                           OR
 $git clone https://github.com/maurosoria/dirsearch.git --depth 1
 $pip3 install psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt
-#If u get the below error after executing above command then u need to do the following:sudo apt install -y python3-package_naem (where package_name=psycopg2-binary,psycopg2,psycopg,mysql-connector-python-rf,defusedcsv,httpx_ntlm,requests_toolbelt)
+$dirsearch/dirsearch.py https://target.com
+
+  _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                                                           
+ (_||| _) (/_(_|| (_| )                                                                                                                                                                    
+                                                                                                                                                                                           
+Extensions: php, asp, aspx, jsp, html, htm | HTTP method: GET | Threads: 25 | Wordlist size: 12266
+
+Target: https://target.com
+
+#If u get the below error after executing 'pip3 install' command then u need to follow the 'if' statement:
 
 error: externally-managed-environment
 
@@ -141,14 +213,7 @@ error: externally-managed-environment
     * https://www.kali.org/docs/general-use/python3-external-packages/
     * /usr/share/doc/python3.12/README.venv
 
-$dirsearch/dirsearch.py https://target.com
 
-  _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                                                           
- (_||| _) (/_(_|| (_| )                                                                                                                                                                    
-                                                                                                                                                                                           
-Extensions: php, asp, aspx, jsp, html, htm | HTTP method: GET | Threads: 25 | Wordlist size: 12266
-
-Target: https://target.com
 
 
 
