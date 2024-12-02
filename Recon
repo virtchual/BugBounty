@@ -130,14 +130,9 @@ if python --verson >= 3.11 :
    # Step 3: Activate the virtual environment
    source myenv/bin/activate
 
-   # Step 4: Install the package within the virtual environment
-   pip install psycopg2-binary psycopg2
+   # Step 4:Go to line 174
 
-   # Step 5: Use Python and pip from the virtual environment
-   python --version
-   pip list
-   ```
-   To exit the virtual environment, run:
+  To exit the virtual environment, run:
    deactivate
    ```
 
@@ -145,23 +140,23 @@ if python --verson >= 3.11 :
 2. Using `--break-system-packages` (Not Recommended)
    If you want to override the restriction and install packages directly into the system Python environment, use the `--break-system-packages` flag.
 
-   ```bash
-   sudo pip3 install psycopg2-binary psycopg2 --break-system-packages
-   ```
+
+   $sudo pip3 install package_name --break-system-packages
+   (where package_name= dirsearch setup-tools psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt)``
 
    **Warning:** This approach can lead to issues with system-managed Python packages and is discouraged for production systems.
 
 ---
 
 3. Using pipx for Application Installation
-   If you need `psycopg2` for a standalone Python application, you can use `pipx` to create a virtual environment automatically.
+   If you need install python packages for a standalone Python application, you can use `pipx` to create a virtual environment automatically.
 
-   ```bash
    # Step 1: Install pipx if not already installed
    $sudo apt install pipx
 
    # Step 2: Use pipx to install the package
-   $pipx install psycopg2-binary
+   $pipx install package_name
+    (where package_name= dirsearch setup-tools psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt)
    ```
 
 ---
@@ -176,9 +171,10 @@ if python --verson >= 3.11 :
 
 else:
 
-$sudo apt install python3  python3-pip libpq-dev     ###If python3 and python3-pip already installed.Execute this command:$sudo apt upgrade python3 python3-pip -y
-$pip3 install dirsearch
-$dirsearch -u url
+$pip3 install dirsearch setup-tools
+#If errors : Execute line 180
+$dirsearch -u target.com
+
                                           OR
 $git clone https://github.com/maurosoria/dirsearch.git --depth 1
 $pip3 install psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt
