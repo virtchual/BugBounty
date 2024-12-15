@@ -5,6 +5,7 @@ $sudo apt install xsser
 $sudo xsser -u "https://target.com/index.php?payload=XSS" --auto --save
 
 For GUI:
+$sudo pip3 install pycurl bs4 pygeoip gobject cairocffi selenium pillow pygi pygobject pycairo
 $xsser --gtk
 
 $xsser -h
