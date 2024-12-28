@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if a string is passed as an argument
+if [ -z "$1" ]; then
+echo "Usage: $0 <string>"
+exit 1
+fi
+
+# Store the input string
+input_string="$1"
+
+# Perform replacements using sed
+output_string=$(echo "$input_string" | sed -e 's/a/4/g' -e 's/e/3/g' -e 's/o/0/g' -e 's/s/5/g' -e 's/i/1/g')
+
+# Display the converted string
+echo "Original: $input_string"
+echo "Converted: $output_string"
