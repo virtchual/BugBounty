@@ -136,7 +136,7 @@ if python --verson >= 3.11 :
    deactivate
     
 
----
+ 
 2. Using `--break-system-packages` (Not Recommended)
    If you want to override the restriction and install packages directly into the system Python environment, use the `--break-system-packages` flag.
 
@@ -146,7 +146,7 @@ if python --verson >= 3.11 :
 
     Warning:  This approach can lead to issues with system-managed Python packages and is discouraged for production systems.
 
----
+ 
 
 3. Using pipx for Application Installation
    If you need install python packages for a standalone Python application, you can use `pipx` to create a virtual environment automatically.
@@ -159,7 +159,7 @@ if python --verson >= 3.11 :
     (where package_name= dirsearch setup-tools psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt)
     
 
----
+ 
 
 4. Installing System-Wide via APT
    To install Python packages system-wide, try apt install python3-xyz, where xyz is the package you are trying to install.
@@ -167,7 +167,7 @@ if python --verson >= 3.11 :
    $sudo apt install python3-xyz
     
 
----
+ 
 
 else:
 
@@ -258,32 +258,75 @@ $./waybackurls domain.com >subdomain.txt
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+DNS Enumeration : 
 
-   DNS Enumeration : 
-     - Use tools like `dig`, `nslookup`, or `dnsrecon`:
+$sudo apt install -y dig nslookup dnsrecon dnsenum
+$dnsrecon -d target.com
+$nslookup target.com
+$dig target.com
+$dnsenum target.com
+
         
-       dnsrecon -d target.com 
-        
-     - Look for subdomains:
-        
-       subfinder -d target.com 
-        
-   Whois Information :
+Whois Information :
+
+$sudo apt install -y whois      
+$whois target.com 
       
-     whois target.com 
-      
-   -  Network Recon :
-     - Check open ports and services:
+
         
-       nmap -sC -sV target.com 
-        
-   Web Fingerprinting :
-     - Identify technologies using tools like `whatweb`, `wappalyzer`, or `nuclei`.
-        
-       whatweb https://target.com 
+Web Fingerprinting :
+
+$sudo apt install -y whatweb  
+$whatweb https://target.com 
+
+Wappalyzer(https://www.wappalyzer.com/)
         
 
 
+ 
+
+-  Passive Recon: 
+  - Use tools like `whois`, `dnsenum`, and `sublist3r` to gather domain and subdomain information.
+  - Identify technologies using [Wappalyzer](https://www.wappalyzer.com/) or `whatweb`.
+  - Analyze DNS records using `dig` or `dnsrecon`.
+  - Search for public information in Google (`site:biocorellc.com`) or GitHub.
+
+
+
+ 
+
+    
+
+-  TLS/SSL Testing: 
+  - Analyze SSL/TLS configurations using `sslscan` or [Qualys SSL Labs](https://www.ssllabs.com/ssltest/):
+    
+    sslscan biocorellc.com
+    
+
+-  CMS and Software Scanning: 
+  - Detect vulnerable plugins or software with `wpscan` (for WordPress) or `joomscan` (for Joomla).
+    
+    wpscan --url https://biocorellc.com
+    
+
+-  Brute Force: 
+  - Use tools like `ffuf` or `dirbuster` to identify hidden directories/files:
+    
+    ffuf -u https://biocorellc.com/FUZZ -w /path/to/wordlist
+    
+
+ 
+
+
+    
+
+
+
+ 
+
+
+
+ 
 
 
 
