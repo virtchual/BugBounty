@@ -144,7 +144,7 @@ if python --verson >= 3.11 :
    $sudo pip3 install package_name --break-system-packages
    (where package_name= dirsearch setup-tools psycopg2-binary psycopg2 psycopg mysql-connector-python-rf defusedcsv httpx_ntlm requests_toolbelt)``
 
-   **Warning:** This approach can lead to issues with system-managed Python packages and is discouraged for production systems.
+    Warning:  This approach can lead to issues with system-managed Python packages and is discouraged for production systems.
 
 ---
 
@@ -256,3 +256,27 @@ $cd waybackurls
 $go build
 $./waybackurls domain.com >subdomain.txt
 
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
