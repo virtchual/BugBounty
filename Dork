@@ -15,6 +15,43 @@ Searching for Pages with Specific Titles 	  `intitle:` 	  `intitle:”data priva
 Finding Pages that Link to a Specific URL 	`link:` 	    `link:bbc.co.uk/news/technology-57339947`
 Searching for Specific Text on a Web Page 	`intext:` 	  `intext:”cyber threat”`
 
+CCTV camera:
+
+intitle:"Pi-hole-ip" inurl:admin
+intitle:"Gargoyle Router Management Utility" -com|net
+intitle:"Network Camera" inurl:main.cgi
+intitle:"NoVus IP camera" -com
+inurl:"/view/view.shtml"
+inurl:"/view/index.shtml"
+intitle:IP CAMERA Viewer intext:setting | Client setting"
+"site:*/cgi-bin/webproc intext:username"
+"inurl:/swagger/index.html"
+"intext:Security is Off intitle:Namenode information"
+"Firmware Version intitle:iLO ProLiant Login -hpe.com -update"
+"intitle:rsview32 ext:asp"
+"intitle:WSO2 Management Console"
+"intitle:Home - Mongo Express"
+"inurl:8080/dashboard/ intitle:Dashboard"
+"inurl:/index.php?enter=guest"
+"inurl:CGI/Java/Serviceability?adapter=device.statistics.device"
+"intitle:Marshall VS Server"
+"intext:{{szErrorTip}} inurl:/doc/page/login.asp"
+"intitle:openshift web console inurl:console inurl:/console"
+"inurl:/hp_login.html"
+"inurl:webArch/mainFrame filetype:cgi intext:Web Image Monitor"
+inurl:viewer/live/index.html
+inurl:"/view.shtml"
+inurl:"ViewerFrame?Mode=" //
+innurl:"MultiCameraFrame?Mode=
+inurl:"/home/homeJ.html"
+inurl:"control/userimage.html"
+inurl:"indexFrame.shtml"
+inurl:"index.shtml"
+inurl:"view/indexFrame.shtml"
+inurl:"view/index.shtml"
+inurl:"view/view.shtml?videos="
+inurl:"viewerFrame?Mode=Refresh"
+
 
 
 
