@@ -55,9 +55,13 @@ inurl:"viewerFrame?Mode=Refresh"
 
 
 
+ 
 
-
-
+Find public cameras that use this common URL structure : inurl:/view/view.shtml 
+Search for Axis-brand network cameras that are intentionally shared : intitle:"Live View / - AXIS"
+Look for accessible webcams with user image controls : inurl:"/control/userimage.html" 
+Find cameras or IP webcams that expose capture URLs : inurl:"/webcapture.jpg?command=1"
+Search for live camera feeds with motion modes enabled inurl:"viewerframe?mode=motion"
 To find administrative panels: site:example.com inurl:admin
 To unearth log files with passwords: filetype:log "password" site:example.com
 To discover backup directories: intitle:"index of" "backup" site:example.com
